@@ -1,0 +1,25 @@
+s = input()
+if '+' in s:
+    a, b = s.split('+')
+    print(float(a) + float(b))
+elif '-' in s:
+    a, b = s.split('-')
+    print(float(a) - float(b))
+elif '' in s:
+    a, b = s.split('')
+    print(float(a) * float(b))
+elif '/' in s:
+    a, b = s.split('/')
+    print(float(a) / float(b))
+
+
+
+
+import random
+a = [random.randint(-10, 10) for _ in range(20)]
+print("Список:", a)
+print("Минимум:", min(a))
+print("Максимум:", max(a))
+print("Отрицательных:", sum(1 for x in a if x < 0))
+print("Положительных:", sum(1 for x in a if x > 0))
+print("Нулей:", sum(1 for x in a if x == 0))
