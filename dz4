@@ -1,0 +1,62 @@
+def show_quote():
+    print('“Don\'t let the noise of others\' opinions')
+    print('drown out your own inner voice.”')
+    print('Steve Jobs')
+
+
+def show_odd_numbers(a, b):
+    start = min(a, b)
+    end = max(a, b)
+    for num in range(start, end + 1):
+        if num % 2 != 0:  
+            print(num)
+
+
+def draw_line(length, direction, symbol):
+    if direction == 'горизонтально':
+        print(symbol * length)
+    elif direction == 'вертикально':
+        for _ in range(length):
+            print(symbol)
+    else:
+        print("Направление должно быть 'горизонтально' или 'вертикально'")
+
+
+def max_of_four(a, b, c, d):
+    max_num = a
+    if b > max_num:
+        max_num = b
+    if c > max_num:
+        max_num = c
+    if d > max_num:
+        max_num = d
+    return max_num
+
+
+def sum_range(start, end):
+    min_val = min(start, end)
+    max_val = max(start, end)
+    total = 0
+    for num in range(min_val, max_val + 1):
+        total += num
+    return total
+
+
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+
+def is_lucky_number(num):
+    if num < 100000 or num > 999999:
+        return False
+    s = str(num)
+    first_half = int(s[0]) + int(s[1]) + int(s[2])
+    second_half = int(s[3]) + int(s[4]) + int(s[5])
+    return first_half == second_half
