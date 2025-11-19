@@ -1,0 +1,11 @@
+def find_min_index(lst):
+    if not lst:
+        return None
+    return lst.index(min(lst))
+
+
+
+def sort_numbers_string(input_string):
+    numbers = list(map(int, input_string.split()))
+    numbers.sort()
+    return ' '.join(map(str, numbers))
