@@ -1,0 +1,15 @@
+import random
+все_символы = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%"
+def пароль(длина=8):
+    return ''.join(random.choices(все_символы, k=длина))
+def надёжный(p):
+    return len(p) >= 8 and any(c.islower() for c in p) and any(c.isupper() for c in p) and any(c.isdigit() for c in p)
+def много_паролей(n, длина=8):
+    пароли = set()
+    while len(пароли) < n:
+        пароли.add(пароль(длина))
+    return list(пароли)
+p = пароль(10)
+print("Пароль:", p)
+print("Надёжный?" , надёжный(p))
+print("Ещё 3 пароля:", много_паролей(3, 10))
