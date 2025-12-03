@@ -1,0 +1,8 @@
+def split_number(n, min_part=1):
+    if n == 0:
+        return [[]]
+    result = []
+    for first in range(min_part, n):
+        for rest in split_number(n - first, first):
+            result.append([first] + rest)
+    return result
