@@ -1,0 +1,22 @@
+while True:
+    try:
+        days = int(input("Сколько дней вы учились на этой неделе (1–7)? "))
+        if 1 <= days <= 7:
+            break
+        else:
+            print("Введите число от 1 до 7.")
+    except ValueError:
+        print("Это не число. Попробуйте снова.")
+total = 0
+for i in range(1, days + 1):
+    while True:
+        try:
+            hours = float(input(f"Сколько часов вы учились в день {i}? "))
+            if hours >= 0:
+                total += hours
+                break
+            else:
+                print("Часы не могут быть отрицательными.")
+        except ValueError:
+            print("Введите число (можно с запятой).")
+print(f"\nВы учились всего: {total} часов за неделю.")
