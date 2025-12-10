@@ -1,0 +1,28 @@
+numbers = [10, 20, 30, 40, 50]
+try:
+    total = sum(numbers)
+    print("Сумма чисел:", total)
+except TypeError:
+    print("Ошибка: в списке есть элемент, который не является числом")
+
+
+numbers = [10, 20, 30, 40, 50]
+try:
+    divisor = float(input("Введите делитель: "))
+except ValueError:
+    print("Ошибка: введено не число!")
+else:
+    for num in numbers:
+        try:
+            result = num / divisor
+            print(f"{num} / {divisor} = {result}")
+        except ZeroDivisionError:
+            print(f"{num} / {divisor} → Ошибка: деление на ноль!") 
+
+
+numbers = [5111, -3, 12, 82, 0, 100, 42, 21221, 91]
+try:
+    max_value = max(numbers)
+    print("Максимальный элемент:", max_value)
+except ValueError:
+    print("Ошибка: список пуст")
